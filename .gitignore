@@ -2,3 +2,6 @@
 
 # Idea Files
 .idea/
+
+# MacOS weird files
+.DS_Store
