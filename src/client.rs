@@ -8,6 +8,7 @@ use once_cell::sync::Lazy;
 use percent_encoding::{percent_encode, CONTROLS};
 use serde_json::Value;
 use std::{io, result::Result};
+use time::OffsetDateTime;
 
 use crate::dbg_msg;
 use crate::server::RequestExt;
@@ -251,7 +252,12 @@ fn request(method: &'static Method, path: String, redirect: bool, quarantine: bo
 }
 
 // Make a request to a Reddit API and parse the JSON response
-#[cached(size = 100, time = 30, result = true)]
+// Sort of crazy hack to avoid caching /r/random calls - 
+// we swap the cache key to be a unix timestamp when we try
+// and go to /r/random so that we never really cache it. I could 
+// not find any documentation that made it so we could skip
+// caching for specific keys, so this is what I came up with.
+#[cached(size = 100, time = 30, result = true, key = "String", convert = r#"{ if path.starts_with("/r/random/") { OffsetDateTime::now_utc().unix_timestamp().to_string() } else { path.clone() } }"#)]
 pub async fn json(path: String, quarantine: bool) -> Result<Value, String> {
 	// Closure to quickly build errors
 	let err = |msg: &str, e: String| -> Result<Value, String> {
