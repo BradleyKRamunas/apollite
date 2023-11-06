@@ -317,6 +317,7 @@ main > * > footer {
 	display: flex;
 	justify-content: center;
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 main > * > footer > a {
@@ -1572,7 +1573,7 @@ td, th {
 	}
 
 	main {
-		flex-direction: column-reverse;
+		flex-direction: column;
 		padding: 10px;
 		margin: 0 0 10px 0;
 		max-width: 100%;
