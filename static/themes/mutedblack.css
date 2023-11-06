@@ -1,0 +1,14 @@
+/* Black theme setting but with less harsh text and accents */
+.mutedblack {
+	--accent: #004747;
+	--green: #004a12;
+	--text: #bdbdbd;
+	--foreground: #0f0f0f;
+	--background: black;
+	--outside: black;
+	--post: black;
+	--panel-border: 2px solid #0f0f0f;
+	--highlighted: #0f0f0f;
+	--visited: #707070;
+	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
