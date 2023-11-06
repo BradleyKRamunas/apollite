@@ -2,13 +2,7 @@
 
 > An alternative private front-end to Reddit
 
-# ⚠️ Why do I get TOO MANY REQUESTS errors? ⚠️
-## As of July 12th, 2023, Libreddit is currently not operational as Reddit's API changes, that were designed to kill third-party apps and content scrapers who don't pay [large fees](https://www.theverge.com/2023/5/31/23743993/reddit-apollo-client-api-cost), went into effect. [Read the full announcement here.](https://github.com/libreddit/libreddit/issues/840)
-## One of the project maintainers is working towards keeping this project alive to some extent: https://github.com/libreddit/libreddit/issues/836
-
-![screenshot](https://i.ibb.co/QYbqTQt/libreddit-rust.png)
-
----
+**This is my own fork of Libreddit, mostly to make CSS tweaks and minor changes to some features. I called the fork Apollite because Libr😎eddit replaces Apollo for me (rip) and I thought it sounded cool :)**
 
 **10-second pitch:** Libreddit is a portmanteau of "libre" (meaning freedom) and "Reddit". It is a private front-end like [Invidious](https://github.com/iv-org/invidious) but for Reddit. Browse the coldest takes of [r/unpopularopinion](https://libreddit.spike.codes/r/unpopularopinion) without being [tracked](#reddit).
 
